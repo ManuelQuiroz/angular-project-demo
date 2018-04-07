@@ -6,6 +6,9 @@
     "access": "public"
   },
   "private": false,
+  "dependencies": {
+    "@beeman/angular-ui": "^0.1.2"
+  },
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts"

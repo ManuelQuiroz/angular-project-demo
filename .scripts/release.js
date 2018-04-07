@@ -1,19 +1,21 @@
-const { patchVersion, readFile } = require('./utils');
+const { patchLibVersion, patchLibDependencies, getLibs, getScope } = require('./utils');
 
-const { libs, version } = require('../package');
+const { version } = require('../package');
 
-console.log(`Target version: ${version}`);
-console.log('Libs defined: ', libs);
+const libs = getLibs();
+const scope = getScope();
 
 libs.forEach(lib => {
-  console.log(` [ lib ] ${lib}`);
-  console.log(__dirname)
-  const filePath = `${__dirname}/../libs/${lib}/package.json`;
-  const pjson = readFile(filePath);
-  const libVersion = pjson.version;
 
-  patchVersion(filePath, version);
+  console.log('---------------------');
 
-  console.log(` [ lib ] ${lib}: Setting to ${version} from ${libVersion}`);
-})
+  const scopedName = `${scope}/${lib}`;
+  const versionName = `${scopedName}@${version}`;
+
+  console.log(` [ release ] ${lib} => ${versionName}`);
+
+  patchLibVersion(lib, version);
+  patchLibDependencies(libs, scopedName, version);
+
+});
 
