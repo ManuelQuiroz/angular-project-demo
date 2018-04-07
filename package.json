@@ -35,12 +35,12 @@
     "postinstall": "./node_modules/.bin/nx postinstall",
     "release": "standard-version --commit-all",
     "prepublish": "npm run build",
-    "publish": "node ./.scripts/publish",
+    "publish": "node .bin/publish",
     "postpublish": "git push --follow-tags origin master"
   },
   "standard-version": {
     "scripts": {
-      "postbump": "node ./.scripts/release && git add ."
+      "postbump": "node .bin/release && git add ."
     }
   },
   "dependencies": {
