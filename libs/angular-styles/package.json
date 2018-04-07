@@ -2,6 +2,10 @@
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@beeman/angular-styles",
   "version": "0.0.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
   "peerDependencies": {
     "bootstrap": "^4.0.0",
     "bootswatch": "^4.0.0",

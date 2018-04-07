@@ -1,17 +1,22 @@
 {
   "name": "@beeman/angular-project-demo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:libs && npm run build:apps",
+    "build:apps": "ng build --app demo --prod",
     "build:libs": "npm run build:libs:angular-about && npm run build:libs:angular-home && npm run build:libs:angular-styles && npm run build:libs:angular-ui ",
     "build:libs:angular-about": "ng-packagr -p libs/angular-about/package.json",
     "build:libs:angular-home": "ng-packagr -p libs/angular-home/package.json",
     "build:libs:angular-styles": "ng-packagr -p libs/angular-styles/package.json",
-    "postbuild:libs:angular-styles": "npx cpx 'libs/angular-styles/src/scss/**/*.scss' dist/libs/angular-styles/scss",
     "build:libs:angular-ui": "ng-packagr -p libs/angular-ui/package.json",
+    "postbuild:libs:angular-styles": "npx cpx 'libs/angular-styles/src/scss/**/*.scss' dist/libs/angular-styles/scss",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
@@ -27,9 +32,22 @@
     "update:skip": "./node_modules/.bin/nx update skip",
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
-    "postinstall": "./node_modules/.bin/nx postinstall"
+    "postinstall": "./node_modules/.bin/nx postinstall",
+    "release": "standard-version --commit-all",
+    "prepublish": "npm run build",
+    "publish": "node ./.scripts/publish"
   },
-  "private": true,
+  "libs": [
+    "angular-about",
+    "angular-home",
+    "angular-styles",
+    "angular-ui"
+  ],
+  "standard-version": {
+    "scripts": {
+      "postbump": "node ./.scripts/release && git add ."
+    }
+  },
   "dependencies": {
     "@angular/animations": "5.2.7",
     "@angular/common": "5.2.7",
@@ -73,6 +91,7 @@
     "ng-packagr": "^2.4.1",
     "prettier": "1.10.2",
     "protractor": "~5.1.2",
+    "standard-version": "^4.3.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "2.6.2"
