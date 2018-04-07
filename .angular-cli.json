@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@nrwl/schematics/src/schema.json",
   "project": {
     "name": "angular-project-demo",
-    "npmScope": "angular-project-demo",
+    "npmScope": "@beeman",
     "latestMigration": "20180405-add-workspace-schematic-command"
   },
   "e2e": {
@@ -14,6 +14,14 @@
     {
       "project": "./tsconfig.spec.json",
       "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/demo/src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/demo/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
     }
   ],
   "test": {
@@ -22,6 +30,60 @@
     }
   },
   "apps": [
+    {
+      "name": "demo",
+      "root": "apps/demo/src",
+      "outDir": "dist/apps/demo",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.scss"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      },
+      "tags": []
+    },
+    {
+      "name": "angular-about",
+      "root": "libs/angular-about/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "angular-home",
+      "root": "libs/angular-home/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "angular-styles",
+      "root": "libs/angular-styles/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "angular-ui",
+      "root": "libs/angular-ui/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
     {
       "name": "$workspaceRoot",
       "root": ".",
@@ -32,7 +94,7 @@
     "schematics": {
       "collection": "@nrwl/schematics"
     },
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   },
   "warnings": {
