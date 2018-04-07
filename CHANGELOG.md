@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/beeman/angular-project-demo/compare/v0.4.0...v0.4.1) (2018-04-07)
+
+
+### Bug Fixes
+
+* **build:** set whitelistedNonPeerDependencies in angular-styles ([1dee48f](https://github.com/beeman/angular-project-demo/commit/1dee48f))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/beeman/angular-project-demo/compare/v0.3.0...v0.4.0) (2018-04-07)
 
