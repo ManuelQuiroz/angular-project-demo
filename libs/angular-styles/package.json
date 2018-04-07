@@ -1,7 +1,7 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@beeman/angular-styles",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "publishConfig": {
     "access": "public"
   },
@@ -12,10 +12,12 @@
     "font-awesome": "^4.7.0"
   },
   "ngPackage": {
-    "copyPaths": [ {
-      "from": "libs/angular-styles/src/scss/**/*.scss",
-      "to": "dist/libs/angular-styles/scss"
-    } ],
+    "copyPaths": [
+      {
+        "from": "libs/angular-styles/src/scss/**/*.scss",
+        "to": "dist/libs/angular-styles/scss"
+      }
+    ],
     "whitelistedNonPeerDependencies": [
       "."
     ],
