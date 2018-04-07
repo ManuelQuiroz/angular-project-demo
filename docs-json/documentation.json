@@ -5,7 +5,7 @@
     "classes": [
         {
             "name": "AppPage",
-            "id": "class-AppPage-04afbe60-f426-437f-af83-667ee5ab98c3",
+            "id": "class-AppPage-17b702e9-54c6-4dc3-b81f-6327bdb0a21e",
             "file": "apps/demo/e2e/app.po.ts",
             "type": "class",
             "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  navigateTo() {\n    return browser.get('/');\n  }\n\n  text() {\n    return browser.findElement(by.css('body')).getText();\n  }\n}\n",
@@ -37,7 +37,7 @@
     "components": [
         {
             "name": "AboutIndexComponent",
-            "id": "component-AboutIndexComponent-d1b7904a-1b0b-46ae-83a3-15e0ecb1439b",
+            "id": "component-AboutIndexComponent-65cbcc14-cae8-46bd-914a-360faeb8b412",
             "file": "libs/angular-about/src/containers/about-index/about-index.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -62,7 +62,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-c617510f-a0f1-4289-809c-97fe58b76aeb",
+            "id": "component-AppComponent-477abe1c-2d4d-40f3-95c5-b2e9966814b2",
             "file": "apps/demo/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -87,7 +87,7 @@
         },
         {
             "name": "HomeIndexComponent",
-            "id": "component-HomeIndexComponent-f8f07c53-b78f-470b-bc47-448ac3597705",
+            "id": "component-HomeIndexComponent-cc87de29-1cbc-46c2-b796-7ac1c81a54a5",
             "file": "libs/angular-home/src/containers/home-index/home-index.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -112,7 +112,7 @@
         },
         {
             "name": "UiAlertComponent",
-            "id": "component-UiAlertComponent-33a5e20e-c16a-4789-ae72-f4c47f70de7e",
+            "id": "component-UiAlertComponent-cbb2629d-f21b-43ce-8fa9-0d004759eb1d",
             "file": "libs/angular-ui/src/components/ui-alert/ui-alert.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -147,7 +147,7 @@
         },
         {
             "name": "UiButtonComponent",
-            "id": "component-UiButtonComponent-493ba605-fa4e-4912-b427-e071cab15167",
+            "id": "component-UiButtonComponent-0d9da41c-05d7-4d8b-9cbe-a441465cd622",
             "file": "libs/angular-ui/src/components/ui-button/ui-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -199,7 +199,7 @@
         },
         {
             "name": "UiFooterComponent",
-            "id": "component-UiFooterComponent-8327edc1-6de1-46dc-8052-f462c01e0036",
+            "id": "component-UiFooterComponent-48f7dc07-cc62-494e-aa69-09f02e5329b4",
             "file": "libs/angular-ui/src/components/ui-footer/ui-footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -224,7 +224,7 @@
         },
         {
             "name": "UiHeaderComponent",
-            "id": "component-UiHeaderComponent-3a9ff309-8c48-4b05-92bf-6d7045841fe1",
+            "id": "component-UiHeaderComponent-ff150e21-f70a-4dc1-a84c-a8b9e4d88604",
             "file": "libs/angular-ui/src/components/ui-header/ui-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -249,7 +249,7 @@
         },
         {
             "name": "UiLayoutComponent",
-            "id": "component-UiLayoutComponent-1b89a1f7-3858-4724-bc52-5839ce545e62",
+            "id": "component-UiLayoutComponent-a0399e0c-45d4-4daf-bea5-66b7e8d8fb7e",
             "file": "libs/angular-ui/src/containers/ui-layout/ui-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
