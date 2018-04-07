@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/beeman/angular-project-demo/compare/v0.7.0...v0.8.0) (2018-04-07)
+
+
+### Features
+
+* **build:** implement compodoc ([a7710ed](https://github.com/beeman/angular-project-demo/commit/a7710ed))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/beeman/angular-project-demo/compare/v0.6.1...v0.7.0) (2018-04-07)
 
