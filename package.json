@@ -38,12 +38,6 @@
     "publish": "node ./.scripts/publish",
     "postpublish": "git push --follow-tags origin master"
   },
-  "libs": [
-    "angular-about",
-    "angular-home",
-    "angular-styles",
-    "angular-ui"
-  ],
   "standard-version": {
     "scripts": {
       "postbump": "node ./.scripts/release && git add ."

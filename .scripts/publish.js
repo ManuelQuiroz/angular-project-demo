@@ -1,11 +1,11 @@
-const execSync = require('child_process').execSync;
+const { getLibs, getProjectFilePath } = require('./utils');
+const { execSync } = require('child_process');
 
-const { libs } = require('../package.json');
+const libs = getLibs();
 
 libs.map(lib => {
-  const libPath = `${__dirname}/../dist/libs/${lib}`;
-  console.log(` [ publish ] ${lib} from ${libPath}`);
+  const libPath = getProjectFilePath(`dist/libs/${lib}`);
 
   execSync(`cd ${libPath} && npm publish`);
-  console.log(` [ publish ] ${lib}: Done`);
+  console.log(` [ publish ] Published ${lib} from ${libPath}`);
 });

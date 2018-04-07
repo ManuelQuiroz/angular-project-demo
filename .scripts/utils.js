@@ -82,7 +82,7 @@ const getScope = () => {
 
 
 module.exports = {
-  readFile,
+  getProjectFilePath,
   patchLibVersion,
   patchLibDependencies,
   getLibs,
