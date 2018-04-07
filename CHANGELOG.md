@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/beeman/angular-project-demo/compare/v0.6.1...v0.7.0) (2018-04-07)
+
+
+### Features
+
+* **build:** implement build-apps script ([1ec0ace](https://github.com/beeman/angular-project-demo/commit/1ec0ace))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/beeman/angular-project-demo/compare/v0.6.0...v0.6.1) (2018-04-07)
 
