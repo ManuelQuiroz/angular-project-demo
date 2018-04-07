@@ -22,19 +22,19 @@ const patchLibDependencies = (libs, libName, version) => {
     const libsPath = `libs/${lib}/package.json`;
     const libConfig = readProjectFile(libsPath, true);
 
-    // Get the dependencies
-    const dependencies = libConfig.dependencies || {};
+    // Get the peerDependencies
+    const peerDependencies = libConfig.peerDependencies || {};
 
     // Filter in the ones that we need to update
-    const updatedDeps = Object.keys(dependencies)
+    const updatedDeps = Object.keys(peerDependencies)
       .filter(dependency => dependency === libName);
 
-    // Update any dependencies
+    // Update any peerDependencies
     if (updatedDeps.length) {
       // For each of the items in this array
       updatedDeps.forEach(updateDep => {
         // We simply set the version to the key
-        libConfig.dependencies[updateDep] = version
+        libConfig.peerDependencies[updateDep] = version
       });
       // And we write the contents back to the file
       writeProjectFile(libsPath, libConfig, true)
