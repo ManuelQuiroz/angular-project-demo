@@ -1,15 +1,16 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-const execInProjectPath = (path, command) => {
-  execSync(`cd ${getProjectFilePath(path)} && ${command}`);
-}
+const execInProjectPath = (command) => {
+  const output = execSync(command, getProjectFilePath());
+  console.log(output.toString());
+};
 
-const getProjectFilePath = file => [__dirname, '..', file].join('/');
+const getProjectFilePath = (file = '') => [__dirname, '..', file].join('/');
 
-const readFile = (file) => fs.readFileSync(file)
+const readFile = (file) => fs.readFileSync(file);
 
-const writeFile = (file, data) => fs.writeFileSync(file, data)
+const writeFile = (file, data) => fs.writeFileSync(file, data);
 
 const readProjectFile = (file, parse = false) => {
   const contents = readFile(getProjectFilePath(file));
@@ -63,6 +64,18 @@ const getAngularCli = () => {
   return JSON.parse(readFile(angularCliPath));
 }
 
+const getApps = () => {
+  const angularCli = getAngularCli()
+
+  // Get the array of apps defined in the Angular CLI
+  const { apps } = angularCli;
+
+  // If the app root starts with `libs/` we consider it a lib
+  return apps
+    .filter(lib => lib.root.indexOf('apps/') === 0)
+    .map(lib => lib.name);
+};
+
 const getLibs = () => {
   const angularCli = getAngularCli()
 
@@ -90,6 +103,7 @@ module.exports = {
   getProjectFilePath,
   patchLibVersion,
   patchLibDependencies,
+  getApps,
   getLibs,
   getScope,
   execInProjectPath,

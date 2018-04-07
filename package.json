@@ -11,7 +11,7 @@
     "start": "ng serve",
     "build": "npm run build:libs && npm run build:apps",
     "build:apps": "ng build --app demo --prod",
-    "build:libs": "node .bin/build",
+    "build:libs": "node .bin/build-libs",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
@@ -29,9 +29,12 @@
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "postinstall": "./node_modules/.bin/nx postinstall",
     "release": "standard-version --commit-all",
-    "prepublish": "npm run build:libs",
-    "publish": "node .bin/publish",
-    "postpublish": "git push --follow-tags origin master"
+    "publish": "npm run publish:libs && npm run publish:apps",
+    "prepublish:libs": "npm run build:libs",
+    "publish:libs": "node .bin/publish-libs",
+    "postpublish:libs": "git push --follow-tags origin master",
+    "prepublish:apps": "npm run build:apps",
+    "publish:apps": "echo 'publish apps'"
   },
   "standard-version": {
     "scripts": {
