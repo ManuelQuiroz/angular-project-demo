@@ -1,4 +1,9 @@
 const fs = require('fs');
+const { execSync } = require('child_process');
+
+const execInProjectPath = (path, command) => {
+  execSync(`cd ${getProjectFilePath(path)} && ${command}`);
+}
 
 const getProjectFilePath = file => [__dirname, '..', file].join('/');
 
@@ -87,4 +92,6 @@ module.exports = {
   patchLibDependencies,
   getLibs,
   getScope,
+  execInProjectPath,
+  readProjectFile,
 };
