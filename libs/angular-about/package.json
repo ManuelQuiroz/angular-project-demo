@@ -6,7 +6,7 @@
     "access": "public"
   },
   "private": false,
-  "dependencies": {
+  "peerDependencies": {
     "@beeman/angular-ui": "0.2.0"
   },
   "ngPackage": {
