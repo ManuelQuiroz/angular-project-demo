@@ -1,13 +1,13 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@beeman/angular-about",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "publishConfig": {
     "access": "public"
   },
   "private": false,
   "peerDependencies": {
-    "@beeman/angular-ui": "0.6.0"
+    "@beeman/angular-ui": "0.6.1"
   },
   "ngPackage": {
     "lib": {
